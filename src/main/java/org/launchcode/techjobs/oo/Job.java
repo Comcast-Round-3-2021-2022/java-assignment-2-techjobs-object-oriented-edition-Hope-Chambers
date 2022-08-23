@@ -95,12 +95,12 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
     public String toString(){
-        return "\nID:"+ this.getId()+"\n"+
-                "Name:"+ fieldEmpty(name,"Data not available")+"\n"+
-                "Employer:"+ fieldEmpty( employer.getValue(),"Data not available")+"\n"+
-                "Location:"+ fieldEmpty( location.getValue(),"Data not available")+"\n"+
-                "PositionType:"+ fieldEmpty( positionType.getValue(),"Data not available")+"\n"+
-                "CoreCompetency:"+ fieldEmpty( coreCompetency.getValue(),"Data not available")+"\n";
+        return "\nID: "+ this.getId()+"\n"+
+                "Name: "+ fieldEmpty(name,"Data not available")+"\n"+
+                "Employer: "+ fieldEmpty( employer.getValue(),"Data not available")+"\n"+
+                "Location: "+ fieldEmpty( location.getValue(),"Data not available")+"\n"+
+                "Position Type: "+ fieldEmpty( positionType.getValue(),"Data not available")+"\n"+
+                "Core Competency: "+ fieldEmpty( coreCompetency.getValue(),"Data not available")+"\n";
     }
     public String fieldEmpty(String value, String fieldEmpty){
         if(value.length()==0) {

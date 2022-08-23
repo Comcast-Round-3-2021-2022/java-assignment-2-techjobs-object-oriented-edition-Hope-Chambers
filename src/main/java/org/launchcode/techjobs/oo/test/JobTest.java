@@ -62,14 +62,21 @@ public class JobTest {
 
 
      }
-
-    //@Test
-    //public void testToStringStartsAndEndsWithNewLine(){
+     @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job jobNumberSix= new Job("Product Tester",
+                new Employer("ACME"),
+                new Location("Dessert"),
+                new PositionType("Quality Control"),
+                new CoreCompetency("Persistence"));
        // create a job object w/non-empty values in the fields.
+       public String toString(){
+           return
+         }
        //call toString on the object, starting return value in a variable
        // build up an "expected" string
        // compare with assertEquals
-    //}
+    }
 }
 
 

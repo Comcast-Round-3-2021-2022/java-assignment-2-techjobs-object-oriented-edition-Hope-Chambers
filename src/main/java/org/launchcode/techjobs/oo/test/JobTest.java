@@ -62,21 +62,57 @@ public class JobTest {
 
 
      }
-     @Test
+    @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job jobNumberSix= new Job("Product Tester",
                 new Employer("ACME"),
                 new Location("Dessert"),
                 new PositionType("Quality Control"),
                 new CoreCompetency("Persistence"));
-       // create a job object w/non-empty values in the fields.
-       public String toString(){
-           return
-         }
-       //call toString on the object, starting return value in a variable
-       // build up an "expected" string
-       // compare with assertEquals
+        String makingStrings=jobNumberSix.toString();
+        char actual=makingStrings.charAt(0);
+        char expected='\n';
+        assertEquals(actual,expected);
+        char endingActual=makingStrings.charAt(makingStrings.length()-1);
+        assertEquals(endingActual,expected);
+    }
+
+     @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job jobNumberSeven= new Job("Product Tester",
+                new Employer("ACME"),
+                new Location("Dessert"),
+                new PositionType("Quality Control"),
+                new CoreCompetency("Persistence"));
+       String actual=jobNumberSeven.toString();
+         String expected = "\nID:" + jobNumberSeven.getId() +"\n"+
+                 "Name:Product Tester\n"+
+                 "Employer:ACME\n"+
+                 "Location:Dessert\n"+
+                 "PositionType:Quality Control\n"+
+                 "CoreCompetency:Persistence\n";
+         assertEquals(expected,actual);
+
+    }
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job jobNumberEight= new Job("",
+                new Employer(""),
+                new Location(""),
+                new PositionType(""),
+                new CoreCompetency(""));
+        String actual=jobNumberEight.toString();
+        String expected="\nID:" + jobNumberEight.getId() +"\n"+
+                "Name:Data not available\n"+
+                "Employer:Data not available\n"+
+                "Location:Data not available\n"+
+                "PositionType:Data not available\n"+
+                "CoreCompetency:Data not available\n";
+        assertEquals(expected,actual);
+
+
     }
 }
+
 
 
